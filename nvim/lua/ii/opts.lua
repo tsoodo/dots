@@ -1,3 +1,4 @@
+vim.opt.laststatus = 3
 vim.opt.winborder = "rounded"
 vim.opt.mouse = ""
 vim.opt.tabstop = 4
