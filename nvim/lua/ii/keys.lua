@@ -15,7 +15,7 @@ k.set("n", "<leader>z", ":ZenMode <CR>", opts)
 k.set("n", "<leader>L", ":Lazy <CR>", opts)
 
 -- Jumplist
-k.set("n", "<C-m>", "<C-i>", opts)
+k.set("n", "<C-i>", "<C-i>", opts)
 
 -- New tab
 k.set("n", "te", ":tabedit<Return>")
@@ -28,4 +28,3 @@ k.set("n", "sv", ":vsplit<Return>", opts)
 
 -- Select all
 k.set("n", "<C-a>", "gg<S-v>G")
-
