@@ -15,7 +15,6 @@ return {
             }
         })
         local builtin = require('telescope.builtin')
-        local previewers = require('telescope.previewers')
         vim.keymap.set('n', ';f', builtin.find_files, { silent = true })
         vim.keymap.set("n", ";g", builtin.live_grep, { silent = true })
         vim.keymap.set("n", ";r", ":Telescope oldfiles<CR>", { silent = true })

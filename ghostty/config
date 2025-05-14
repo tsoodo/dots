@@ -16,7 +16,7 @@ macos-window-shadow = true
 window-height = 27
 window-width = 72
 
-theme = light:BlulocoLight,dark:BlulocoDark
+theme = light:rose-pine-dawn,dark:rose-pine-moon
 
 shell-integration-features = no-cursor
 cursor-color = #f34b00
