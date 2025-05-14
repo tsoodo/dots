@@ -1,0 +1,26 @@
+
+font-family = CaskaydiaCove Nerd Font Mono
+
+clipboard-read = allow
+clipboard-write = allow
+window-padding-x = 9
+window-padding-y = 9
+background-opacity = 0.9
+background-blur = true
+unfocused-split-opacity = 0.72
+font-size = 21
+macos-titlebar-style = transparent
+macos-icon = glass
+macos-window-shadow = true
+
+window-height = 27
+window-width = 72
+
+theme = light:BlulocoLight,dark:BlulocoDark
+
+shell-integration-features = no-cursor
+cursor-color = #f34b00
+cursor-style = block
+cursor-style-blink = true
+
+
