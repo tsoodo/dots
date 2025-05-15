@@ -4,3 +4,4 @@ gitconfigs
 nvim.bak
 qBittorrent
 qutebrowser
+.DS_Store

@@ -5,9 +5,6 @@ local opts = { noremap = true, silent = true }
 -- general
 vim.g.mapleader = " "
 
--- Map q to Escape in normal mode
-k.set('n', 'q', '<Esc>', opts)
-
 -- ZenMode keymaps
 k.set("n", "<leader>z", ":ZenMode <CR>", opts)
 
@@ -18,13 +15,12 @@ k.set("n", "<leader>L", ":Lazy <CR>", opts)
 k.set("n", "<C-i>", "<C-i>", opts)
 
 -- New tab
-k.set("n", "te", ":tabedit<Return>")
+k.set("n", "te", ":tabedit | Oil<Return>")
 k.set("n", "<tab>", ":tabnext<Return>", opts)
 k.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- Split window
-k.set("n", "ss", ":split<Return>", opts)
-k.set("n", "sv", ":vsplit<Return>", opts)
-
+k.set("n", "ss", ":split<Return><C-w>w", opts)
+k.set("n", "sv", ":vsplit<Return><C-w>w", opts)
 -- Select all
 k.set("n", "<C-a>", "gg<S-v>G")
