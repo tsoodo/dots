@@ -15,7 +15,7 @@ k.set("n", "<leader>L", ":Lazy <CR>", opts)
 k.set("n", "<C-i>", "<C-i>", opts)
 
 -- New tab
-k.set("n", "te", ":tabedit | Oil<Return>")
+k.set("n", "te", ":tabedit | Telescope find_files<Return>")
 k.set("n", "<tab>", ":tabnext<Return>", opts)
 k.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
