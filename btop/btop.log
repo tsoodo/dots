@@ -1,6 +1,0 @@
-
-2024/10/09 (13:50:38) | ===> btop++ v.1.4.0
-2024/10/09 (13:50:38) | WARNING: Failed to get disk/partition stats with statvfs() for: /Volumes/BURNER
-
-2024/12/17 (12:36:22) | ===> btop++ v.1.4.0
-2024/12/17 (12:36:22) | ERROR: Stall in Runner thread, restarting!
