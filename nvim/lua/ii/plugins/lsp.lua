@@ -31,8 +31,8 @@ return {
       automatic_installation = false,
       ensure_installed = {
         "lua_ls",
-        "rust_analyzer",
         "tinymist",
+        "ast_grep"
       },
       handlers = {
         function(server_name)
