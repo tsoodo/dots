@@ -24,3 +24,15 @@ k.set("n", "ss", ":split<Return><C-w>w", opts)
 k.set("n", "sv", ":vsplit<Return><C-w>w", opts)
 -- Select all
 k.set("n", "<C-a>", "gg<S-v>G")
+
+-- Move line down in normal mode
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+
+-- Move line up in normal mode
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+
+-- Move selected lines down in visual mode
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
+-- Move selected lines up in visual mode
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })

@@ -1,6 +1,9 @@
 
 font-family = CaskaydiaCove Nerd Font Mono
 
+title = "👻"
+macos-titlebar-proxy-icon = hidden
+
 clipboard-read = allow
 clipboard-write = allow
 window-padding-x = 9
