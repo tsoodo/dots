@@ -2,11 +2,11 @@ return {
     'stevearc/conform.nvim',
     opts = {
         formatters_by_ft = {
-            lua = { "lua_ls" },
+            lua = { "stylua" },
             -- Conform will run multiple formatters sequentially
-            python = { "isort", "black" },
+            python = { "isort", "black", "ruff" },
             -- rust
-            rust = { "ast_grep" },
+            rust = { "ast-grep" },
             -- Conform will run the first available formatter
             javascript = { "prettierd", "prettier", stop_after_first = true },
         },
