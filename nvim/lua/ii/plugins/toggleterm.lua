@@ -35,8 +35,14 @@ return {
 			floating_term:toggle()
 		end
 
-		-- Function to toggle the horizontal terminal
+		-- Function to toggle the horizontal terminal (only if floating terminal is closed)
 		local function _horizontal_term_toggle()
+			-- Check if floating terminal is open
+			if floating_term:is_open() then
+				-- Optionally show a message that horizontal terminal is disabled
+				vim.notify("Close floating terminal first", vim.log.levels.WARN)
+				return
+			end
 			horizontal_terminal:toggle()
 		end
 
