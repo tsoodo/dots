@@ -1,14 +1,14 @@
 return {
-    {
-        "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup({})
-        end
-    },
-    {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
-        opts = {},
+	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	},
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre",
+		opts = {},
         -- stylua: ignore
         keys = {
             { "<leader>qs", function() require("persistence").load() end,                desc = "Restore Session" },
@@ -16,19 +16,19 @@ return {
             { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
             { "<leader>qd", function() require("persistence").stop() end,                desc = "Don't Save Current Session" },
         },
-    },
-    {
-        "OXY2DEV/markview.nvim",
-        lazy = false,
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
 
-        dependencies = {
-            "saghen/blink.cmp"
-        },
-    },
-    {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
-        opts = {},
+		dependencies = {
+			"saghen/blink.cmp",
+		},
+	},
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre",
+		opts = {},
         -- stylua: ignore
         keys = {
             { "<leader>qs", function() require("persistence").load() end,                desc = "Restore Session" },
@@ -36,41 +36,51 @@ return {
             { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
             { "<leader>qd", function() require("persistence").stop() end,                desc = "Don't Save Current Session" },
         },
-    },
-    {
-        'wakatime/vim-wakatime', lazy = false
-    },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        ---@module "ibl"
-        ---@type ibl.config
-        opts = {},
-    },
-    {
-        "lewis6991/gitsigns.nvim",
-        opts = {
-            signs = {
-                add = { text = "▎" },
-                change = { text = "▎" },
-                delete = { text = "" },
-                topdelete = { text = "" },
-                changedelete = { text = "▎" },
-                untracked = { text = "▎" },
-            },
-            signs_staged = {
-                add = { text = "▎" },
-                change = { text = "▎" },
-                delete = { text = "" },
-                topdelete = { text = "" },
-                changedelete = { text = "▎" },
-            },
-            on_attach = function(buffer)
-                local gs = package.loaded.gitsigns
+	},
+	{
+		"wakatime/vim-wakatime",
+		lazy = false,
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		---@module "ibl"
+		---@type ibl.config
+		opts = {},
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			current_line_blame = true,
+			current_line_blame_opts = {
+				virt_text = true,
+				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+				delay = 1000,
+				ignore_whitespace = false,
+			},
+			current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
 
-                local function map(mode, l, r, desc)
-                    vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-                end
+			signs = {
+				add = { text = "▎" },
+				change = { text = "▎" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "▎" },
+				untracked = { text = "▎" },
+			},
+			signs_staged = {
+				add = { text = "▎" },
+				change = { text = "▎" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "▎" },
+			},
+			on_attach = function(buffer)
+				local gs = package.loaded.gitsigns
+
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+				end
 
                 -- stylua: ignore start
                 map("n", "]h", function()
@@ -100,82 +110,82 @@ return {
                 map("n", "<leader>ghd", gs.diffthis, "Diff This")
                 map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
                 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
-            end,
-        },
-    },
-    {
-        "windwp/nvim-ts-autotag",
-        opts = {},
-    },
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        opts_extend = { "spec" },
-        opts = {
-            preset = "helix",
-            defaults = {},
-            spec = {
-                {
-                    mode = { "n", "v" },
-                    { "<leader><tab>", group = "tabs" },
-                    { "<leader>c", group = "code" },
-                    { "<leader>d", group = "debug" },
-                    { "<leader>dp", group = "profiler" },
-                    { "<leader>f", group = "file/find" },
-                    { "<leader>g", group = "git" },
-                    { "<leader>gh", group = "hunks" },
-                    { "<leader>q", group = "quit/session" },
-                    { "<leader>s", group = "search" },
-                    { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
-                    { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
-                    { "[", group = "prev" },
-                    { "]", group = "next" },
-                    { "g", group = "goto" },
-                    { "gs", group = "surround" },
-                    { "z", group = "fold" },
-                    {
-                        "<leader>b",
-                        group = "buffer",
-                        expand = function()
-                            return require("which-key.extras").expand.buf()
-                        end,
-                    },
-                    {
-                        "<leader>w",
-                        group = "windows",
-                        proxy = "<c-w>",
-                        expand = function()
-                            return require("which-key.extras").expand.win()
-                        end,
-                    },
-                    -- better descriptions
-                    { "gx", desc = "Open with system app" },
-                },
-            },
-        },
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Keymaps (which-key)",
-            },
-            {
-                "<c-w><space>",
-                function()
-                    require("which-key").show({ keys = "<c-w>", loop = true })
-                end,
-                desc = "Window Hydra Mode (which-key)",
-            },
-        },
-        config = function(_, opts)
-            local wk = require("which-key")
-            wk.setup(opts)
-            if not vim.tbl_isempty(opts.defaults) then
-                LazyVim.warn("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
-                wk.register(opts.defaults)
-            end
-        end,
-    }
+			end,
+		},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts_extend = { "spec" },
+		opts = {
+			preset = "helix",
+			defaults = {},
+			spec = {
+				{
+					mode = { "n", "v" },
+					{ "<leader><tab>", group = "tabs" },
+					{ "<leader>c", group = "code" },
+					{ "<leader>d", group = "debug" },
+					{ "<leader>dp", group = "profiler" },
+					{ "<leader>f", group = "file/find" },
+					{ "<leader>g", group = "git" },
+					{ "<leader>gh", group = "hunks" },
+					{ "<leader>q", group = "quit/session" },
+					{ "<leader>s", group = "search" },
+					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
+					{ "[", group = "prev" },
+					{ "]", group = "next" },
+					{ "g", group = "goto" },
+					{ "gs", group = "surround" },
+					{ "z", group = "fold" },
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{
+						"<leader>w",
+						group = "windows",
+						proxy = "<c-w>",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					-- better descriptions
+					{ "gx", desc = "Open with system app" },
+				},
+			},
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Keymaps (which-key)",
+			},
+			{
+				"<c-w><space>",
+				function()
+					require("which-key").show({ keys = "<c-w>", loop = true })
+				end,
+				desc = "Window Hydra Mode (which-key)",
+			},
+		},
+		config = function(_, opts)
+			local wk = require("which-key")
+			wk.setup(opts)
+			if not vim.tbl_isempty(opts.defaults) then
+				io.stderr:write("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
+				wk.register(opts.defaults)
+			end
+		end,
+	},
 }
