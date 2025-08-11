@@ -24,6 +24,14 @@ return {
 		dependencies = {
 			"saghen/blink.cmp",
 		},
+
+		config = function()
+			require("markview").setup({
+				experimental = {
+					check_rtp_message = false, -- or check_rtp = false
+				},
+			})
+		end,
 	},
 	{
 		"folke/persistence.nvim",

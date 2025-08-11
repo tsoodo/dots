@@ -9,3 +9,4 @@ raycast/
 nvim/.DS_Store
 gs
 thefuck
+nvim/lazy-lock.json
