@@ -1,3 +1,9 @@
+> Newest addition: tmux!
+
+> ik im late dont be mad. im loving it tho
+
+> completely ripped off [forehead god](https://github.com/SylvanFranklin/.config/)
+
 # Dotfiles
 
 ## terminal

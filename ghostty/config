@@ -1,4 +1,3 @@
-
 font-family = CaskaydiaCove Nerd Font Mono
 
 title = "👻"
@@ -18,11 +17,10 @@ macos-window-shadow = true
 window-height = 27
 window-width = 72
 
-theme = light:rose-pine-dawn,dark:rose-pine-moon
+theme = light:Rose Pine Dawn,dark:Rose Pine Moon
 
 shell-integration-features = no-cursor
 cursor-color = #f34b00
 cursor-style = block
 cursor-style-blink = true
-
-
+keybind = shift+enter=text:\x1b\r

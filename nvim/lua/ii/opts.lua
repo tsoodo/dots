@@ -1,4 +1,5 @@
 vim.opt.laststatus = 3
+vim.opt.ignorecase = false
 vim.opt.mouse = "a"
 vim.opt.tabstop = 4
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"

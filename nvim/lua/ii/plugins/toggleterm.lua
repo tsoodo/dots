@@ -11,7 +11,6 @@ return {
 		local horizontal_terminal = Terminal:new({
 			direction = "horizontal",
 			opts = {
-				open_mapping = [[<C-/>]], -- Default horizontal terminal
 				direction = "horizontal",
 			},
 			-- Hide the terminal number in the buffer name
@@ -46,18 +45,34 @@ return {
 			horizontal_terminal:toggle()
 		end
 
-		vim.keymap.set("n", "<C-S-/>", function()
-			_floating_term_toggle()
-		end, { desc = "Toggle floating terminal" })
-		vim.keymap.set("t", "<C-S-/>", function()
-			_floating_term_toggle()
-		end, { desc = "Toggle floating terminal" })
+		if vim.env.TMUX then
+			vim.keymap.set("n", "<C-^>", function()
+				_floating_term_toggle()
+			end, { desc = "Toggle floating terminal" })
+			vim.keymap.set("t", "<C-^>", function()
+				_floating_term_toggle()
+			end, { desc = "Toggle floating terminal" })
 
-		vim.keymap.set("n", "<C-/>", function()
-			_horizontal_term_toggle()
-		end, { desc = "Toggle horizontal terminal" })
-		vim.keymap.set("t", "<C-/>", function()
-			_horizontal_term_toggle()
-		end, { desc = "Toggle horizontal terminal" })
+			vim.keymap.set("n", "<C-\\>", function()
+				_horizontal_term_toggle()
+			end, { desc = "Toggle horizontal terminal" })
+			vim.keymap.set("t", "<C-\\>", function()
+				_horizontal_term_toggle()
+			end, { desc = "Toggle horizontal terminal" })
+		else
+			vim.keymap.set("n", "<C-t>", function()
+				_horizontal_term_toggle()
+			end, { desc = "Toggle horizontal terminal" })
+			vim.keymap.set("t", "<C-t>", function()
+				_horizontal_term_toggle()
+			end, { desc = "Toggle horizontal terminal" })
+
+			vim.keymap.set("n", "<C-S-t>", function()
+				_floating_term_toggle()
+			end, { desc = "Toggle floating terminal" })
+			vim.keymap.set("t", "<C-S-t>", function()
+				_floating_term_toggle()
+			end, { desc = "Toggle floating terminal" })
+		end
 	end,
 }

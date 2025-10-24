@@ -17,22 +17,6 @@ return {
             { "<leader>qd", function() require("persistence").stop() end,                desc = "Don't Save Current Session" },
         },
 	},
-	-- {
-	-- 	"OXY2DEV/markview.nvim",
-	-- 	lazy = false,
-	--
-	-- 	dependencies = {
-	-- 		"saghen/blink.cmp",
-	-- 	},
-	--
-	-- 	config = function()
-	-- 		require("markview").setup({
-	-- 			experimental = {
-	-- 				check_rtp_message = false, -- or check_rtp = false
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"folke/persistence.nvim",
 		event = "BufReadPre",
