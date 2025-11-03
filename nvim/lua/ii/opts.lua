@@ -1,10 +1,10 @@
 vim.opt.laststatus = 3
 vim.opt.ignorecase = false
 vim.opt.mouse = "a"
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.smartindent = false
 vim.opt.expandtab = true
 vim.opt.wrap = false

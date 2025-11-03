@@ -36,3 +36,15 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 
 -- Move selected lines up in visual mode
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- Copy filename only
+vim.keymap.set("n", "<leader>cf", function()
+	vim.fn.setreg("+", vim.fn.expand("%:t"))
+	print("Copied filename: " .. vim.fn.expand("%:t"))
+end, { desc = "Copy filename" })
+
+-- Copy full file path
+vim.keymap.set("n", "<leader>cp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+	print("Copied path: " .. vim.fn.expand("%:p"))
+end, { desc = "Copy file path" })
