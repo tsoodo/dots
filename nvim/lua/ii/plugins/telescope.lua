@@ -20,7 +20,7 @@ return {
     vim.keymap.set("n", ";r", ":Telescope oldfiles<CR>", { silent = true })
     vim.keymap.set('n', ';h', builtin.help_tags, { desc = 'Telescope help tags' })
     vim.keymap.set('n', ';;', builtin.resume, { desc = 'Telescope resume' })
-    -- vim.keymap.set('n', '<leader>c', builtin.commands, { desc = 'Telescope help tags' })
+    vim.keymap.set('n', '<leader>ht', builtin.commands, { desc = 'Telescope help tags' })
     vim.keymap.set('n', '<leader>co', builtin.colorscheme, { desc = 'Telescope help tags' })
     vim.keymap.set('n', '<leader>lt', builtin.treesitter, { desc = 'List functions' })
     vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { desc = 'List functions' })
